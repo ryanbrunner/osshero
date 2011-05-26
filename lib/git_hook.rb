@@ -11,7 +11,7 @@ class GitHook
 
   private
     def commit_urls
-      # get commit urls
+      @payload['commits'].map { |c| c['url'] }
     end
 
     def find_requests_in (url)
