@@ -1,0 +1,28 @@
+@import 'mixins';
+
+section.help_requests {
+  @include panel;
+  overflow: hidden;
+  background-color: #CCC;
+  & > h1 {
+    @include title;
+  }
+  ul {
+    li {
+      clear: both;
+      margin-bottom: 20px;
+      h1 {
+        color: #911;
+        font-size: 1.2em;
+      }
+
+      .requester, .hero {
+        display: inline-block;
+        @include column(7);
+      }
+      .hero {
+        @include last;
+      }
+    }
+  }
+}

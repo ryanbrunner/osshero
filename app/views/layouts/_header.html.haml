@@ -1,0 +1,9 @@
+%header#main_header
+  %h1 OSS Hero
+  %h2 Saving the world, one commit at a time.
+
+
+%nav#side_nav
+  %section.user_status= current_user_status
+  %ul
+    %li= link_to 'Help me!', new_help_request_path

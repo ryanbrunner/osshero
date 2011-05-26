@@ -1,0 +1,8 @@
+%li
+  %h1= help_request.title
+  %p.description= help_request.description
+  .requester= "Requested by #{help_request.requester.nickname}"
+  -if help_request.hero
+    .hero= "Worked on by #{help_request.hero.nickname}" 
+  -else
+    .hero= link_to_help(help_request)

@@ -1,0 +1,53 @@
+/* line 3, ../../app/assets/stylesheets/help_requests.css.scss */
+section.help_requests {
+  border: solid 2px #333;
+  padding: 5px;
+  margin: 10px 0px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #CCC;
+}
+/* line 7, ../../app/assets/stylesheets/help_requests.css.scss */
+section.help_requests > h1 {
+  background-image: url(/assets/noise.png);
+  position: relative;
+  top: -5px;
+  left: -5px;
+  padding: 5px 20px;
+  border-right: solid 2px black;
+  border-bottom: solid 2px black;
+  display: block;
+  width: 60%;
+  background-color: #FF9;
+}
+/* line 11, ../../app/assets/stylesheets/help_requests.css.scss */
+section.help_requests ul li {
+  clear: both;
+  margin-bottom: 20px;
+}
+/* line 14, ../../app/assets/stylesheets/help_requests.css.scss */
+section.help_requests ul li h1 {
+  color: #911;
+  font-size: 1.2em;
+}
+/* line 19, ../../app/assets/stylesheets/help_requests.css.scss */
+section.help_requests ul li .requester, section.help_requests ul li .hero {
+  display: inline-block;
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 270px;
+}
+/* line 147, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html section.help_requests ul li .requester, * html section.help_requests ul li .hero {
+  overflow-x: hidden;
+}
+/* line 23, ../../app/assets/stylesheets/help_requests.css.scss */
+section.help_requests ul li .hero {
+  margin-right: 0;
+}

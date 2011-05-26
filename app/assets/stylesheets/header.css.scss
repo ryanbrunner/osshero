@@ -1,0 +1,37 @@
+@import 'mixins';
+
+header#main_header {
+  clear: both;
+  @include column(18);
+  @include text-shadow(rgba(black, 0.3) 2px 2px 2px);
+  margin-bottom: 20px;
+  
+  &:before {
+    content: url('/assets/starburst_corner.png');
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index:0;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+    color: #911;
+    font-size: 4em;
+    overflow: visible;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family: 'Bangers', sans-serif;
+  }
+  h2 {
+    text-indent: 20px;
+    z-index: 1;
+    position:relative;
+  }
+}
+nav#side_nav {
+  @include column(6);
+  @include last;
+  min-height: 70px; 
+}

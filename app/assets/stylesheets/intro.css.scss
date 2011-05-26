@@ -1,0 +1,37 @@
+@import 'mixins';
+
+section.intro {
+  clear: both;
+  li {
+    @include column(12);
+    &:last-child {
+      @include last;
+    }
+    .intro_panel {
+      @include panel;
+      background-color: #911;
+      height: 300px;
+      position: relative;
+      h1 {
+        @include title;
+      }
+      p {
+        position: absolute;
+        background-image:url(/assets/noise.png);
+        bottom: 5px;
+        border: solid 2px #333;
+        margin-right: 5px;
+        background-color: #EED;
+        padding: 5px;
+      }
+      &.need_help {
+        background-image: url(/assets/bad_guy.jpg);
+        background-size: 100%;
+      }
+      &.help {
+        background-image: url(/assets/superman.jpg);
+        background-size: 100%;
+      }
+    }
+  }
+}

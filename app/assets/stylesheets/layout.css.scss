@@ -1,0 +1,39 @@
+@import 'compass/reset';
+@import 'blueprint';
+@import 'compass/css3';
+@import 'mixins';
+
+#content { 
+  @include container;
+  position: relative;
+  color: #333;
+  font-family: 'KomikaDisplayRegular', sans-serif;
+  background-color: #F9F9EA;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid 2px #333;
+  background-image:url('/assets/noise.png');
+}
+
+nav#side_nav {
+  background-image:url('/assets/comics-code.jpg');
+  background-repeat: no-repeat;
+  background-position: right 5px;
+}
+
+section.large_widget {
+  @include column(16);
+}
+
+section.full_widget {
+  @include column(24);
+}
+
+section.small_widget {
+  @include column(8);
+}
+
+section.last {
+  @include last;
+}
