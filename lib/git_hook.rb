@@ -1,5 +1,6 @@
 class GitHook
   def new(payload)
+    Rails.logger.info payload
     @payload = ActiveSupport::JSON.decode(payload)
   end
 
