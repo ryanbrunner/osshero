@@ -1,3 +1,5 @@
+require 'git_hook'
+
 class GithubController < ApplicationController
   def post_commit
     logger.info "payload received."
