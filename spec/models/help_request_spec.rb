@@ -6,4 +6,5 @@ describe HelpRequest do
 
   it { should belong_to :requester }
   it { should belong_to :hero }
+
 end
