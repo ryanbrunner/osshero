@@ -1,5 +1,6 @@
 class GithubController < ApplicationController
   def post_commit
-    render :text => params[:payload]
+    logger.info "payload received: #{params[:payload]}"
+    render :text => 'OK'
   end
 end

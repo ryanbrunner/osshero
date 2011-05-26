@@ -9,7 +9,7 @@ gem 'sass'
 gem 'compass'
 gem 'tilt', :git => 'https://github.com/rtomayko/tilt.git'
 gem 'coffee-script'
-#gem 'therubyracer'
+gem 'therubyracer'
 gem 'uglifier'
 
 # Controller stuff
