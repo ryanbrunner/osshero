@@ -51,7 +51,6 @@ GEM
       chunky_png (~> 1.1)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    crack (0.1.8)
     cucumber (0.10.2)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
@@ -73,8 +72,6 @@ GEM
     haml (3.1.1)
     has_scope (0.5.0)
     hike (1.0.0)
-    httparty (0.7.4)
-      crack (= 0.1.8)
     i18n (0.6.0beta1)
     inherited_resources (1.2.2)
       has_scope (~> 0.5.0)
@@ -216,7 +213,6 @@ DEPENDENCIES
   cucumber
   factory_girl
   haml
-  httparty
   inherited_resources
   jquery-rails
   omniauth
