@@ -4,7 +4,7 @@ class GitHook
   end
 
   def perform
-    logger.info @payload.to_yaml
+    Rails.logger.info @payload.to_yaml
 
     commit_urls.each do |url|
       find_requests_in url
@@ -18,7 +18,7 @@ class GitHook
 
     def find_requests_in (url)
       data = get_commit_data(url)
-      logger.info data.to_yaml
+      Rails.logger.info data.to_yaml
     end
 
     def get_commit_data (url)
