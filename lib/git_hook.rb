@@ -4,6 +4,8 @@ class GitHook
   end
 
   def perform
+    logger.info @payload.to_yaml
+
     commit_urls.each do |url|
       find_requests_in url
     end
