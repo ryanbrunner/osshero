@@ -18,6 +18,7 @@ gem 'simple_form'
 
 # Authentication
 gem 'omniauth'
+gem 'octopi'
 
 gem 'jquery-rails'
 

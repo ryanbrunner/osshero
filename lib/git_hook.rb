@@ -6,18 +6,21 @@ class GitHook
   def perform
     Rails.logger.info @payload.to_yaml
 
-    commit_urls.each do |url|
-      find_requests_in url
+    commit_data.each do |data|
+      find_requests_in data
     end
   end
 
   private
-    def commit_urls
-      @payload['commits'].map { |c| c['url'] }
+    def commit_data
+      user = @payload['repository']['owner']['name']
+      repo = @payload['repository']['name']
+
+      @payload['commits'].map { |c| {:user => user, :repo => repo, :sha => c['id'] } }
     end
 
-    def find_requests_in (url)
-      data = get_commit_data(url)
+    def find_requests_in (commit_params)
+      data = get_commit_data(commit_params)
       
       data['commit']['modified'].each do |m|
         m['diff'].split('\n').each do |line|
@@ -30,11 +33,8 @@ class GitHook
       HelpRequest.create(:title => "HELP!! #{Time.now}")
     end
 
-    def get_commit_data (url)
-      url = url.gsub('https', 'http')
-      
-      commit_data = Net::HTTP.get(URI.parse("#{url}.json"))
-      ActiveSupport::JSON.decode(commit_data)
+    def get_commit_data (params)
+      Octopi::Commit.find(params)
     end
 
 end
