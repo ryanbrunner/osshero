@@ -1,7 +1,6 @@
 class GitHook
-  def new(payload)
-    Rails.logger.info payload
-    @payload = ActiveSupport::JSON.decode(payload)
+  def initialize(payload)
+    @payload = payload
   end
 
   def perform
@@ -19,7 +18,16 @@ class GitHook
 
     def find_requests_in (url)
       data = get_commit_data(url)
-      Rails.logger.info data.to_yaml
+      
+      data['commit']['modified'].each do |m|
+        m['diff'].split('\n').each do |line|
+          log_help_request if line =~ /#\s*HELPME/i
+        end
+      end
+    end
+
+    def log_help_request
+      HelpRequest.create(:title => "HELP!! #{Time.now}")
     end
 
     def get_commit_data (url)
