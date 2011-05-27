@@ -32,7 +32,7 @@ class GitHook
 
     def get_commit_data (url)
       url = url.gsub('https', 'http')
-      Rails.logger.info url
+      
       commit_data = Net::HTTP.get(URI.parse("#{url}.json"))
       ActiveSupport::JSON.decode(commit_data)
     end
