@@ -8,4 +8,6 @@ class GithubController < ApplicationController
 
     render :text => 'OK'
   end
+
+  #HELPME: Add an action for pull requests.
 end
