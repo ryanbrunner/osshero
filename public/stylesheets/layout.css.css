@@ -132,4 +132,10 @@ section.last {
 /* line 41, ../../app/assets/stylesheets/layout.css.scss */
 .body_section {
   z-index: 1;
+  position: relative;
+}
+
+/* line 46, ../../app/assets/stylesheets/layout.css.scss */
+.top, .body_section {
+  overflow: hidden;
 }
