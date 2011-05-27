@@ -4,9 +4,10 @@ class GitHook
   end
 
   def perform
-    Rails.logger.info @payload.to_yaml
+    Rails.logger.info "Received GitHub commit."
 
     commit_data.each do |data|
+      Rails.logger.info "   Checking for commits in #{data[:user]}/#{data[:repo]}/#{data[:sha]}"
       find_requests_in data
     end
   end
@@ -30,6 +31,7 @@ class GitHook
     end
 
     def log_help_request
+      Rails.logger.info "   Logging Help Request"
       HelpRequest.create(:title => "HELP!! #{Time.now}")
     end
 
