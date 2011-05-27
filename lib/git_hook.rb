@@ -23,7 +23,7 @@ class GitHook
     def find_requests_in (commit_params)
       data = get_commit_data(commit_params)
       
-      data['commit']['modified'].each do |m|
+      data.modified.each do |m|
         m['diff'].split('\n').each do |line|
           log_help_request if line =~ /#\s*HELPME/i
         end
