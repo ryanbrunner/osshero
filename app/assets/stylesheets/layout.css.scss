@@ -37,3 +37,8 @@ section.small_widget {
 section.last {
   @include last;
 }
+
+.body_section {
+  z-index:1;
+  position:relative;
+}
