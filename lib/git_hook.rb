@@ -34,7 +34,7 @@ class GitHook
 
     def log_help_request (params)
       Rails.logger.info "   Logging Help Request"
-      HelpRequest.create(params.merge(:user => @user))
+      HelpRequest.create(params.merge(:requester => @user))
     end
 
     def get_commit_data (params)

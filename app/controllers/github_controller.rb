@@ -9,5 +9,5 @@ class GithubController < ApplicationController
     render :text => 'OK'
   end
 
-  #HELPME: Add an action to merge
+  #HELPME: Add an action to create a fork when a user works on an item.
 end
