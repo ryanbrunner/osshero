@@ -25,14 +25,16 @@ class GitHook
       
       data.modified.each do |m|
         m['diff'].split('\n').each do |line|
-          log_help_request if line =~ /#\s*HELPME/i
+          line.match(/#\s*HELPME\s*:\s*(.*)/i) do |m| 
+            log_help_request :title => m[1]
+          end
         end
       end
     end
 
-    def log_help_request
+    def log_help_request (params)
       Rails.logger.info "   Logging Help Request"
-      HelpRequest.create(:title => "HELP!! #{Time.now}")
+      HelpRequest.create(params)
     end
 
     def get_commit_data (params)

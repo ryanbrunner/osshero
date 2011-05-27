@@ -70,4 +70,12 @@ describe GitHook do
     hook = GitHook.new(payload)
     hook.perform
   end
+
+  it "should get the title of the help request from the comment" do
+    Octopi::Commit.stub(:find).and_return(matching_commit)
+    HelpRequest.should_receive(:create).with(hash_including(:title => 'I need help'))
+
+    hook = GitHook.new(payload)
+    hook.perform
+  end
 end
