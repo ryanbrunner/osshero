@@ -25,7 +25,7 @@ class GitHook
       
       data.modified.each do |m|
         m['diff'].split('\n').each do |line|
-          line.match(/#\s*HELPME\s*:\s*(.*)/i) do |m| 
+          line.match(/^+\s#\s*HELPME\s*:\s*(.*)/i) do |m| 
             log_help_request :title => m[1]
           end
         end

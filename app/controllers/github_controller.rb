@@ -9,5 +9,5 @@ class GithubController < ApplicationController
     render :text => 'OK'
   end
 
-  #HELPME: Add an action to create a fork when a user works on an item.
+  #HELPME: Make sure that only new lines generate a new help request.
 end
