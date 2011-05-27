@@ -31,7 +31,7 @@ class GitHook
     end
 
     def get_commit_data (url)
-      commit_data = Net::HTTP.get(URI.parse("#{url}.json").gsub('https://', 'http://'))
+      commit_data = Net::HTTP.get(URI.parse("#{url}.json".gsub('https://', 'http://')))
       ActiveSupport::JSON.decode(commit_data)
     end
 
