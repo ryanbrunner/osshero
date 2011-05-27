@@ -9,5 +9,5 @@ class GithubController < ApplicationController
     render :text => 'OK'
   end
 
-  #HELPME: Add an action for pull requests.
+  #HELPME: Add an action to merge
 end

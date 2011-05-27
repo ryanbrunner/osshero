@@ -1,10 +1,13 @@
 class GitHook
   def initialize(payload)
     @payload = payload
+    @user_name = @payload['repository']['owner']['name']
+    @repo = @payload['repository']['name']
   end
 
   def perform
     Rails.logger.info "Received GitHub commit."
+    return unless @user = User.named(@user_name)
 
     commit_data.each do |data|
       Rails.logger.info "   Checking for commits in #{data[:user]}/#{data[:repo]}/#{data[:sha]}"
@@ -14,10 +17,7 @@ class GitHook
 
   private
     def commit_data
-      user = @payload['repository']['owner']['name']
-      repo = @payload['repository']['name']
-
-      @payload['commits'].map { |c| {:user => user, :repo => repo, :sha => c['id'] } }
+      @payload['commits'].map { |c| {:user => @user_name, :repo => @repo, :sha => c['id'] } }
     end
 
     def find_requests_in (commit_params)
@@ -34,7 +34,7 @@ class GitHook
 
     def log_help_request (params)
       Rails.logger.info "   Logging Help Request"
-      HelpRequest.create(params)
+      HelpRequest.create(params.merge(:user => @user))
     end
 
     def get_commit_data (params)

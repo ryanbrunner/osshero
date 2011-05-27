@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   validates :uid, :presence => true
   validates :provider, :presence => true
 
+  def self.named(name)
+    where(:nickname => name).first
+  end
+
   def self.find_or_create_from_omniauth(provider, auth)
     raise "No provider defined" if provider.empty?
     raise "No uid defined" unless auth['uid']

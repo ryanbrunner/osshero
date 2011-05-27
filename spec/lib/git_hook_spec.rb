@@ -38,6 +38,10 @@ describe GitHook do
     OpenStruct.new(:modified => [{'diff' => '\n\n+   HELPME: I need help' }])
   end
 
+  before(:each) do
+    User.stub(:named).and_return(User.new)
+  end
+
   it "should pull all commits" do
     Octopi::Commit.should_receive(:find).with(hash_including(:user => 'testuser',
                                                              :repo => 'testrepo',
