@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110519174247) do
+ActiveRecord::Schema.define(:version => 20110623233721) do
 
   create_table "help_requests", :force => true do |t|
     t.integer  "requester_id"
@@ -19,10 +19,33 @@ ActiveRecord::Schema.define(:version => 20110519174247) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "project_id"
   end
 
   add_index "help_requests", ["hero_id"], :name => "index_help_requests_on_hero_id"
   add_index "help_requests", ["requester_id"], :name => "index_help_requests_on_requester_id"
+
+  create_table "help_responses", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "help_request_id"
+    t.boolean  "completed"
+    t.string   "repository"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "help_responses", ["help_request_id"], :name => "index_help_responses_on_help_request_id"
+  add_index "help_responses", ["user_id"], :name => "index_help_responses_on_user_id"
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.string   "repository"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "uid"

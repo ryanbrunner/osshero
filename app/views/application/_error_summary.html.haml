@@ -1,0 +1,5 @@
+%section.error_summary
+  %h1 Oops, there were some issues with the form!
+  %ul
+    -resource.errors.full_messages.each do |e|
+      %li= e

@@ -8,7 +8,7 @@ header#main_header {
   text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px;
   margin-bottom: 20px;
 }
-/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../.rvm/gems/ruby-1.9.2-p0@osshero/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html header#main_header {
   overflow-x: hidden;
 }
@@ -47,7 +47,7 @@ nav#side_nav {
   margin-right: 0;
   min-height: 70px;
 }
-/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../.rvm/gems/ruby-1.9.2-p0@osshero/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html nav#side_nav {
   overflow-x: hidden;
 }

@@ -1,3 +1,6 @@
+-if resource.errors.any?
+  =render 'error_summary', :object => resource, :as => 'resource'
+
 =simple_form_for resource do |f|
   =f.association :requester, :as => :hidden
   =f.input :title

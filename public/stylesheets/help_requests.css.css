@@ -43,7 +43,7 @@ section.help_requests ul li .requester, section.help_requests ul li .hero {
   margin-right: 10px;
   width: 270px;
 }
-/* line 147, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../.rvm/gems/ruby-1.9.2-p0@osshero/gems/compass-0.11.1/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html section.help_requests ul li .requester, * html section.help_requests ul li .hero {
   overflow-x: hidden;
 }

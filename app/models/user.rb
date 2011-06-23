@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
     where(:nickname => name).first
   end
 
+  def to_s
+    nickname
+  end
+
   def self.find_or_create_from_omniauth(provider, auth)
     raise "No provider defined" if provider.empty?
     raise "No uid defined" unless auth['uid']
