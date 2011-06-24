@@ -17,7 +17,7 @@ gem 'simple_form'
 
 # Authentication
 gem 'omniauth'
-gem 'octopi'
+gem 'octopi', :path => '../octopi'
 
 gem 'jquery-rails'
 

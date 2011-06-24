@@ -11,4 +11,11 @@ class HelpResponsesController < InheritedResources::Base
       raise repo
     end
   end
+
+  def complete
+    authenticated_with :login => current_user.nickname, :token => current_user.token do
+      
+    end
+  end
 end
+

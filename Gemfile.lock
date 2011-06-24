@@ -1,3 +1,12 @@
+PATH
+  remote: ../octopi
+  specs:
+    octopi (0.4.4)
+      api_cache
+      httparty (>= 0.4.5)
+      mechanize (>= 0.9.3)
+      nokogiri (>= 1.3.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -120,11 +129,6 @@ GEM
     oauth2 (0.4.1)
       faraday (~> 0.6.1)
       multi_json (>= 0.0.5)
-    octopi (0.4.4)
-      api_cache
-      httparty (>= 0.4.5)
-      mechanize (>= 0.9.3)
-      nokogiri (>= 1.3.1)
     omniauth (0.2.5)
       oa-basic (= 0.2.5)
       oa-core (= 0.2.5)
@@ -221,7 +225,7 @@ DEPENDENCIES
   haml
   inherited_resources
   jquery-rails
-  octopi
+  octopi!
   omniauth
   rails (= 3.1.0.beta1)
   remarkable_activerecord (= 4.0.0.alpha4)
