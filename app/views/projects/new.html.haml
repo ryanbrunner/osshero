@@ -1,5 +1,5 @@
 =simple_form_for resource do |f|
   =f.input :name
-  =f.input :repository
+  =f.input :repository, :as => :select, :collection => Octopi::Repository.find(:user => current_user.nickname)
   =f.association :user
   =f.submit
