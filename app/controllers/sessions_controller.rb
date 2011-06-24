@@ -15,9 +15,19 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    sign_out
+
+    redirect_to root_path
+  end
+
   private 
   
   def sign_in(user)
     session[:user_id] = user.id
+  end
+
+  def sign_out
+    session[:user_id] = nil
   end
 end

@@ -1,0 +1,8 @@
+%h1 Help with #{@help_request.title}
+
+%p Want to help with #{@help_request.title}? Click Go and we'll create a fork and track your commits.
+
+= simple_form_for [@help_request, resource] do |f|
+  = f.association :user
+  = f.association :help_request
+  = f.submit "Go!"

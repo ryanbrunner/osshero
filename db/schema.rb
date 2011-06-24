@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110623233721) do
+ActiveRecord::Schema.define(:version => 20110624000144) do
 
   create_table "help_requests", :force => true do |t|
     t.integer  "requester_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20110623233721) do
     t.string   "nickname"
     t.string   "email"
     t.string   "github_url"
+    t.string   "token"
   end
 
 end

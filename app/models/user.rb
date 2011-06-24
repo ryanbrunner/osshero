@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   validates :uid, :presence => true
   validates :provider, :presence => true
+  validates :token, :presence => true
 
   def self.named(name)
     where(:nickname => name).first
@@ -19,6 +20,7 @@ class User < ActiveRecord::Base
         u.email = auth['user_info']['email'] 
         u.github_url = auth['user_info']['urls']['GitHub'] if user_info['urls']
         u.nickname = auth['user_info']['nickname']
+        u.token = auth['credentials']['token']
       end
     end
   end
