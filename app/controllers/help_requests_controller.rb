@@ -8,6 +8,6 @@ class HelpRequestsController < InheritedResources::Base
   protected
     
   def collection
-    @help_requests ||= end_of_association_chain.paginate(params[:page])
+    @help_requests ||= end_of_association_chain
   end
 end
