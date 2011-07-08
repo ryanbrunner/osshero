@@ -3,6 +3,8 @@
 
 =simple_form_for resource do |f|
   =f.association :requester, :as => :hidden
+  =f.fields_for resource.project do |x|
+    =x.input :repository
   =f.input :title
   =f.input :description
   =f.submit "Help me!"
