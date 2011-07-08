@@ -8,7 +8,7 @@ class HelpRequestsController < InheritedResources::Base
 
   def create
     repository_name = params[:help_request][:project][:repository]
-    @project = Project.find_or_create_by_repository(repository_name, user: current_user)
+    @project = Project.find_or_create_by_user_id_and_repository(current_user.id, repository_name)
 
     @help_request = HelpRequest.create(
       requester: current_user,
